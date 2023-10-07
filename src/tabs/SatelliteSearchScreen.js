@@ -1,13 +1,7 @@
 import { useState } from "react";
-import { Button, FlatList, StyleSheet, Text, TextInput, View } from "react-native";
+import { Button, FlatList, Text, TextInput, View } from "react-native";
 
 import Celestrak from "../celestrak/celestrak-api";
-
-const searchStyle = StyleSheet.create({
-    satelliteResultItem: {
-        padding: '15px',
-    },
-});
 
 function SatelliteResultItem(data) {
     return(
