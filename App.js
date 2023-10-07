@@ -9,18 +9,23 @@ import SettingsScreen from './src/views/SettingsScreen';
 import TelemetryScreen from './src/views/TelemetryScreen';
 import AnalyticsScreen from './src/views/AnalyticsScreen';
 
+import SatDataContext from './src/global/satDataContext';
+
 const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name="Telemetry" component={TelemetryScreen} />
-        <Tab.Screen name="Analytics" component={AnalyticsScreen} />
-        <Tab.Screen name="Map" component={MapScreen} />
-        <Tab.Screen name="Settings" component={SettingsScreen} />
-      </Tab.Navigator>
-    </NavigationContainer>
+    <SatDataContext.Provider>
+      <NavigationContainer>
+        <Tab.Navigator>
+          <Tab.Screen name="Home" component={HomeScreen} />
+          <Tab.Screen name="Telemetry" component={TelemetryScreen} />
+          <Tab.Screen name="Analytics" component={AnalyticsScreen} />
+          <Tab.Screen name="Search" component={AnalyticsScreen} />
+          <Tab.Screen name="Map" component={MapScreen} />
+          <Tab.Screen name="Settings" component={SettingsScreen} />
+        </Tab.Navigator>
+      </NavigationContainer>
+    </SatDataContext.Provider>
   );
 }
