@@ -34,3 +34,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 .vscode/launch.json
+
+android
+.expo

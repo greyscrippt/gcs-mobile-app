@@ -16,7 +16,7 @@ const Tab = createBottomTabNavigator();
 
 export default function App() {
   return (
-    <SatelliteDataContext.Provider>
+    <SatelliteDataContext.Provider value={[]}>
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="Home"       component={ HomeScreen      } />

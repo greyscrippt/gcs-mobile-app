@@ -11,8 +11,9 @@ const styles = StyleSheet.create({
     resultItemCard: {
       width: '100%',
       height: '50px',
-      padding: '8px',
+      padding: '18px',
       borderColor: 0xAABBCC,
+      backgroundColor: 'white',
     }
   });
 

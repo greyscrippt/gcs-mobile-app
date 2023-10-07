@@ -10,7 +10,7 @@ const Celestrak = {
         return axios.get(BASE_URL + querry);
     },
     querryBySatelliteName: (name) => {
-        return axios.get(BASE_URL + "NAME=" + name + "&FORMAT=JSON");
+        return axios.get(BASE_URL + "NAME=" + name + "&FORMAT=JSON-PRETTY");
     },
     querryBySatelliteNameAndFormat: (name, format) => {
         return axios.get(BASE_URL + "NAME=" + name + "&FORMAT=" + format);
