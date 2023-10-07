@@ -3,14 +3,17 @@ import axios from 'axios';
 const BASE_URL = "https://celestrak.org/NORAD/elements/gp.php?";
 
 const Celestrak = {
-    getMicrosatDataAsJsonPretty: () => {
-        return axios.get(BASE_URL + "NAME=MICROSAT-R&FORMAT=JSON")
+    querrySampleData: () => {
+        return axios.get(BASE_URL + "NAME=MICROSAT-R&FORMAT=JSON");
     },
     querry: (querry) => {
-        return axios.get(BASE_URL + querry + "&FORMAT=JSON");
+        return axios.get(BASE_URL + querry);
     },
     querryBySatelliteName: (name) => {
-        return axios.get(BASE_URL + "NAME=" + name + "&FORMAT=JSON")
+        return axios.get(BASE_URL + "NAME=" + name + "&FORMAT=JSON");
+    },
+    querryBySatelliteNameAndFormat: (name, format) => {
+        return axios.get(BASE_URL + "NAME=" + name + "&FORMAT=" + format);
     },
 }
 

@@ -2,16 +2,17 @@ import { useState } from "react";
 import { Button, FlatList, Text, TextInput, View } from "react-native";
 
 import Celestrak from "../celestrak/celestrak-api";
+import styles from "../styles/styles";
 
 function SatelliteResultItem(data) {
     return(
-        <View>
+        <View style={styles.resultItemCard}>
             <Text>Object Name: {data.OBJECT_NAME}</Text>
         </View>
     );
 }
 
-export default function SatelliteSearchScreen() {
+export default function SearchScreen() {
     const [searchQuerry, setSearchQuerry] = useState("");
     const [searchResult, setSearchResult] = useState([]);
 
