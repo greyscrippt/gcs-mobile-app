@@ -9,11 +9,18 @@ const styles = StyleSheet.create({
       height: '100%',
     },
     resultItemCard: {
-      width: '100%',
-      height: '50px',
-      padding: '18px',
-      borderColor: 0xAABBCC,
+      padding: 12,
       backgroundColor: 'white',
+    },
+    resultItemSeparator: {
+      margin: 5,
+    },
+    resultView: {
+      padding: 5,
+    },
+    textSpecView: {
+      display: 'flex',
+      flexDirection: 'row',
     }
   });
 

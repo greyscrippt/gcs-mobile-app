@@ -25,14 +25,49 @@ const mockSatelliteData = [
         BSTAR:                  0.00035612,
         MEAN_MOTION_DOT:        0.00019849,
         MEAN_MOTION_DDOT:       0,
-    }
+    },
+    {
+        OBJECT_NAME:            "ISS (ZARIA 2)",
+        OBJECT_ID:              "1998-067A2",
+        EPOCH:                  "2023-10-07T12:30:35.992224",
+        MEAN_MOTION:            15.4989303,
+        ECCENTRICITY:           0.000534,
+        INCLINATION:            51.6404,
+        RA_OF_ASC_NODE:         132.1242,
+        ARG_OF_PERICENTER:      82.1275,
+        MEAN_ANOMALY:           1.0399,
+        EPHEMERIS_TYPE:         0,
+        CLASSIFICATION_TYPE:    "U",
+        NORAD_CAT_ID:           25544,
+        ELEMENT_SET_NO:         999,
+        REV_AT_EPOCH:           41921,
+        BSTAR:                  0.00035612,
+        MEAN_MOTION_DOT:        0.00019849,
+        MEAN_MOTION_DDOT:       0,
+    },
 ];
+
+function TextSpecView(props) {
+    return(
+        <View style={styles.textSpecView}>
+            <Text style={{ fontWeight:600 }}>
+                {props.title}:
+
+            </Text>
+            <Text style={{ fontWeight:400 }}>
+                {props.description}
+            </Text>
+        </View>
+    );
+}
 
 function SatelliteResultItem(data) {
     return(
         <View style={styles.resultItemCard}>
-            <Text style={{ fontWeight:600 }}>Object ID: <Text style={{ fontWeight:400 }}>{data.data.item.OBJECT_ID}</Text></Text>
-            <Text style={{ fontWeight:600 }}>Object Name: <Text style={{ fontWeight:400 }}>{data.data.item.OBJECT_NAME}</Text></Text>
+            <TextSpecView 
+                title="Name"
+                description={data.data.item.OBJECT_NAME}
+                />
         </View>
     );
 }
@@ -45,6 +80,8 @@ export default function SearchScreen() {
         return(
             <View>
                 <FlatList
+                    style={styles.resultView}
+                    ItemSeparatorComponent={<View style={styles.resultItemSeparator} />}
                     data=           { mockSatelliteData }
                     renderItem=     {(satellite) => <SatelliteResultItem data={satellite} />}
                     keyExtractor=   {(satellite) => satellite.OBJECT_ID}
@@ -67,13 +104,13 @@ export default function SearchScreen() {
 
     return(
         <View>
-            <View>
-                <Text>Search</Text>
-
+            <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
                 <TextInput
                     onChange={(value) => setSearchQuerry(() => value)}
                     text={searchQuerry}
+                    style={{ width: '80%', height: 40, backgroundColor: 'white' }}
                     />
+
 
                 <Button
                     title="Search"
