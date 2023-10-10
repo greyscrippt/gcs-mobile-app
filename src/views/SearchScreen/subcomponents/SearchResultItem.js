@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { Text, View } from "react-native";
 
 import TextSpecView from "./TextSpecView";
 
@@ -9,7 +9,12 @@ export default function SatelliteResultItem(data) {
         <View style={appStyles.resultItemCard}>
             <TextSpecView 
                 title="Name"
-                description={data.OBJECT_NAME}
+                description={data.data.OBJECT_NAME}
+                />
+
+            <TextSpecView 
+                title="ID"
+                description={data.data.OBJECT_ID}
                 />
         </View>
     );
