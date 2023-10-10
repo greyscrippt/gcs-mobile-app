@@ -2,9 +2,9 @@ import { useState } from "react";
 import { Button, FlatList, Text, TextInput, View } from "react-native";
 
 import Celestrak from "../celestrak/celestrak-api";
-import styles from "../styles/styles";
+import { appStyles } from "../styles/styles";
 
-const MOCK = true;
+const MOCK = false;
 
 const mockSatelliteData = [
     {
@@ -49,7 +49,7 @@ const mockSatelliteData = [
 
 function TextSpecView(props) {
     return(
-        <View style={styles.textSpecView}>
+        <View style={appStyles.textSpecView}>
             <Text style={{ fontWeight:600 }}>
                 {props.title}:
 
@@ -63,10 +63,10 @@ function TextSpecView(props) {
 
 function SatelliteResultItem(data) {
     return(
-        <View style={styles.resultItemCard}>
+        <View style={appStyles.resultItemCard}>
             <TextSpecView 
                 title="Name"
-                description={data.data.item.OBJECT_NAME}
+                description={data.OBJECT_NAME}
                 />
         </View>
     );
@@ -80,9 +80,9 @@ export default function SearchScreen() {
         return(
             <View>
                 <FlatList
-                    style={styles.resultView}
-                    ItemSeparatorComponent={<View style={styles.resultItemSeparator} />}
-                    data=           { mockSatelliteData }
+                    style={appStyles.resultView}
+                    ItemSeparatorComponent={<View style={appStyles.resultItemSeparator} />}
+                    data=           { searchResult }
                     renderItem=     {(satellite) => <SatelliteResultItem data={satellite} />}
                     keyExtractor=   {(satellite) => satellite.OBJECT_ID}
                     />
@@ -92,6 +92,8 @@ export default function SearchScreen() {
 
     function doSatelliteSearch() {
         if(MOCK) return;
+
+        console.log(searchQuerry);
 
         Celestrak
             .querryBySatelliteName(searchQuerry)
@@ -106,7 +108,7 @@ export default function SearchScreen() {
         <View>
             <View style={{ display: 'flex', flexDirection: 'row', justifyContent: 'space-between', padding: 5 }}>
                 <TextInput
-                    onChange={(value) => setSearchQuerry(() => value)}
+                    onChange={(value) => setSearchQuerry(value)}
                     text={searchQuerry}
                     style={{ width: '80%', height: 40, backgroundColor: 'white' }}
                     />

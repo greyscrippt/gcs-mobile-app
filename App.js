@@ -10,7 +10,7 @@ import TelemetryScreen  from './src/views/TelemetryScreen';
 import AnalyticsScreen  from './src/views/AnalyticsScreen';
 
 import SatelliteDataContext from './src/global/SatelliteDataContext';
-import SearchScreen from './src/views/SearchScreen';
+import SearchScreen         from './src/views/SearchScreen';
 
 const Tab = createBottomTabNavigator();
 

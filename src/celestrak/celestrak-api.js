@@ -4,7 +4,7 @@ const BASE_URL = "https://celestrak.org/NORAD/elements/gp.php?";
 
 const Celestrak = {
     querrySampleData: () => {
-        return axios.get(BASE_URL + "NAME=MICROSAT-R&FORMAT=JSON");
+        return axios.get(BASE_URL + "NAME=ISS&FORMAT=JSON");
     },
     querry: (querry) => {
         return axios.get(BASE_URL + querry);
