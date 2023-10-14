@@ -9,7 +9,6 @@ import SettingsView   from './src/views/SettingsView/SettingsView';
 import TelemetryView  from './src/views/TelemetryView/TelemetryView';
 
 import SatelliteDataContext from './src/global/SatelliteDataContext';
-import SatellitesScreen     from './src/views/SatellitesView/SatellitesView';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,7 +19,6 @@ export default function App() {
         <Tab.Navigator>
           <Tab.Screen name="Home"       component={ HomeView          } />
           <Tab.Screen name="Telemetry"  component={ TelemetryView     } />
-          <Tab.Screen name="Search"     component={ SatellitesScreen  } />
           <Tab.Screen name="Map"        component={ WorldMapView      } />
           <Tab.Screen name="Settings"   component={ SettingsView      } />
         </Tab.Navigator>
