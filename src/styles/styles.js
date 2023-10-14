@@ -19,10 +19,6 @@ const appStyles = StyleSheet.create({
       width: '100%',
       height: '100%',
     },
-    resultItemCard: {
-      padding: 12,
-      backgroundColor: 'white',
-    },
     resultItemSeparator: {
       margin: 5,
     },

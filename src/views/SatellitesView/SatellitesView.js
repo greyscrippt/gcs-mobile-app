@@ -7,11 +7,11 @@ import SearchResultItem from "./subcomponents/SearchResultItem";
 
 import { appStyles } from "../../styles/styles";
 
-export default function SearchScreen() {
+export default function SatellitesScreen() {
     const [searchQuerry, setSearchQuerry] = useState("");
     const [searchResult, setSearchResult] = useState([]);
 
-    function SearchResultView() {
+    function SatelliteResultsView() {
         return(
             <View>
                 <FlatList
@@ -54,7 +54,7 @@ export default function SearchScreen() {
                     />
             </View>
 
-            <SearchResultView />
+            <SatelliteResultsView />
         </View>
     );
 }

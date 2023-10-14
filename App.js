@@ -3,14 +3,13 @@ import * as React from 'react';
 import { NavigationContainer }      from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import MapScreen        from './src/views/MapScreen';
-import HomeScreen       from './src/views/HomeScreen';
-import SettingsScreen   from './src/views/SettingsScreen';
-import TelemetryScreen  from './src/views/TelemetryScreen';
-import AnalyticsScreen  from './src/views/AnalyticsScreen';
+import MapView        from './src/views/MapView/MapView';
+import HomeView       from './src/views/HomeView/HomeView';
+import SettingsView   from './src/views/SettingsView/SettingsView';
+import TelemetryView  from './src/views/TelemetryView/TelemetryView';
 
 import SatelliteDataContext from './src/global/SatelliteDataContext';
-import SearchScreen         from './src/views/SearchScreen/SearchScreen';
+import SatellitesScreen         from './src/views/SatellitesView/SatellitesView';
 
 const Tab = createBottomTabNavigator();
 
@@ -19,12 +18,11 @@ export default function App() {
     <SatelliteDataContext.Provider value={[]}>
       <NavigationContainer>
         <Tab.Navigator>
-          <Tab.Screen name="Home"       component={ HomeScreen      } />
-          <Tab.Screen name="Telemetry"  component={ TelemetryScreen } />
-          <Tab.Screen name="Analytics"  component={ AnalyticsScreen } />
-          <Tab.Screen name="Search"     component={ SearchScreen    } />
-          <Tab.Screen name="Map"        component={ MapScreen       } />
-          <Tab.Screen name="Settings"   component={ SettingsScreen  } />
+          <Tab.Screen name="Home"       component={ HomeView      } />
+          <Tab.Screen name="Telemetry"  component={ TelemetryView } />
+          <Tab.Screen name="Search"     component={ SatellitesScreen    } />
+          <Tab.Screen name="Map"        component={ MapView       } />
+          <Tab.Screen name="Settings"   component={ SettingsView  } />
         </Tab.Navigator>
       </NavigationContainer>
     </SatelliteDataContext.Provider>

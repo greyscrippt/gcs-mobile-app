@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { appStyles } from "../../../styles/styles";
 
 export default function TextSpecView(props) {
